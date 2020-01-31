@@ -22,6 +22,7 @@ namespace lr547315MIS4200.Controllers
         }
 
         // GET: customers/Details/5
+        // question mark in int means it's optional - can ask for details without providing an ID
         public ActionResult Details(int? id)
         {
             if (id == null)
