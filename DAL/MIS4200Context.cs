@@ -4,6 +4,7 @@ using System.Data.Entity;
 using lr547315MIS4200.Models;
 using System.Linq;
 using System.Web;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace lr547315MIS4200.DAL
 {
@@ -11,14 +12,17 @@ namespace lr547315MIS4200.DAL
     {
         public MIS4200Context() : base("name=DefaultConnection")
         {
-            // this method is a 'constructor' and is called when a new context is created
-            // the base attribute says which connection string to use
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Context,lr547315MIS4200.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
         public DbSet<Orders> Orders { get; set; }
         public DbSet<customer> Customers { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
     
