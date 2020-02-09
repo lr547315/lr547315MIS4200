@@ -14,18 +14,30 @@ namespace lr547315MIS4200.DAL
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Context,lr547315MIS4200.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
-        public DbSet<Course> Course { get; set; }
-        public DbSet<Student> Student { get; set; }
-        public DbSet<Instructor> Instructor { get; set; }
-        public DbSet<Enrollment> Enrollment { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<customer> Customers { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
         }
-
-        public System.Data.Entity.DbSet<lr547315MIS4200.Models.Student> Students { get; set; }
     }
 
-    
+    /*public System.Data.Entity.DbSet<lr547315MIS4200.Models.customer> Customer { get; set; }
+
+        public System.Data.Entity.DbSet<lr547315MIS4200.Models.Student> Students { get; set; }
+
+        public System.Data.Entity.DbSet<lr547315MIS4200.Models.Enrollment> Enrollments { get; set; }
+
+        public System.Data.Entity.DbSet<lr547315MIS4200.Models.Course> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<lr547315MIS4200.Models.Instructor> Instructors { get; set; }*/
+
 }

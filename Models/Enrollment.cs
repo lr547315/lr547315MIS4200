@@ -9,12 +9,19 @@ namespace lr547315MIS4200.Models
     public class Enrollment
     {
         public int enrollmentID { get; set; }
+
+        [Display(Name = "Enrollment Name")]
         public string enrollmentName { get; set; }
-        public string enrollmentDescription { get; set; }
-        public DateTime enrollmentTime { get; set; }
-        public int courseID { get; set; }
+        
+        [Display(Name = "Enrollment Date")]
+        public DateTime enrollmentDate { get; set; }
+
+        [Display(Name = "Course Name")]
+        public string courseName { get; set; }
         public virtual Course Course { get; set; }
-        public int instructorID { get; set; }
+
+        [Display(Name = "Instructor Name")]
+        public string instructorName { get; set; }
         public virtual Instructor Instructor { get; set; }
     }
 }

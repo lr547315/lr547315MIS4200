@@ -10,8 +10,14 @@ namespace lr547315MIS4200.Models
     {
         [Key]
         public int courseID { get; set; }
+
+        [Display(Name = "Course Name")]
         public string courseName { get; set; }
+
+        [Display(Name = "Course Description")]
         public string courseDescription { get; set; }
+
+        [Display(Name = "Course Start Date")]
         public DateTime courseTime { get; set; }
 
         // add any other fields as appropriate
@@ -20,6 +26,8 @@ namespace lr547315MIS4200.Models
         public ICollection<Enrollment> Enrollment { get; set; }
         //Order is on the Many side of the one-to-many relation between Customer
         //and Order and we represent that relationship like this
+
+        [Display(Name = "Student ID")]
         public int studentID { get; set; }
         public virtual Student Student { get; set; }
     }
