@@ -10,12 +10,15 @@ namespace lr547315MIS4200.Models
     {
         public int enrollmentID { get; set; }
 
+        [Required(ErrorMessage = "Please include the name you used for enrollment.")]
         [Display(Name = "Enrollment Name")]
         public string enrollmentName { get; set; }
-        
+
+        [Required(ErrorMessage = "Enrollment date is required.")]
         [Display(Name = "Enrollment Date")]
         public DateTime enrollmentDate { get; set; }
 
+        [Required(ErrorMessage = "Course name is required.")]
         [Display(Name = "Course Name")]
         public string courseName { get; set; }
         public virtual Course Course { get; set; }

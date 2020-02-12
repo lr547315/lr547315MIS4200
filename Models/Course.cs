@@ -11,12 +11,14 @@ namespace lr547315MIS4200.Models
         [Key]
         public int courseID { get; set; }
 
+        [Required(ErrorMessage = "Please include the course name.")]
         [Display(Name = "Course Name")]
         public string courseName { get; set; }
 
         [Display(Name = "Course Description")]
         public string courseDescription { get; set; }
 
+        [Required(ErrorMessage = "Please include the course start date.")]
         [Display(Name = "Course Start Date")]
         public DateTime courseTime { get; set; }
 
