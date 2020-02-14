@@ -40,7 +40,7 @@ namespace lr547315MIS4200.Controllers
         // GET: Courses/Create
         public ActionResult Create()
         {
-            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName");
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "fullName");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace lr547315MIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", course.studentID);
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "fullName", course.studentID);
             return View(course);
         }
 
@@ -74,7 +74,7 @@ namespace lr547315MIS4200.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", course.studentID);
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "fullName", course.studentID);
             return View(course);
         }
 
